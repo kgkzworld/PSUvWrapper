@@ -1,0 +1,29 @@
+Config:
+  Description: Python Management RunBook
+  Version: 1.0.0.20250517
+  Run:
+    OnProductType: "1"
+    OnBuild: .*
+    OncpuArch: AMD64
+    OnOSName: .*Windows.*
+  Author: Michael Arroyo
+  Title: Python Management RunBook
+Actions:
+- Write-Host:
+    ForegroundColor: "Yellow"
+    Object: "Starting Python Management RunBook"
+- .\PSUvWrapper.ps1:
+    Venv: ".\\venv"
+    Python: "3.10"
+    ActivateVenv: true
+- .\PSUvWrapper.ps1:
+    Pip: "install -r .\\requirements.txt"
+- .\PSUvWrapper.ps1:
+    Run: ".\\main.py"
+- Invoke-Expression:
+    Command: "deactivate"
+- .\PSUvWrapper.ps1:
+    DeleteVenv: true
+- Write-Host:
+    ForegroundColor: "Green"
+    Object: "Python Management RunBook Completed"
