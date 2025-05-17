@@ -16,7 +16,7 @@ A PowerShell wrapper for the [UV](https://github.com/astral-sh/uv) Python packag
 
 1. Clone this repository:
 ```powershell
-git clone https://github.com/yourusername/PSUvWrapper.git
+git clone https://github.com/kgkzworld/PSUvWrapper.git
 cd PSUvWrapper
 ```
 
